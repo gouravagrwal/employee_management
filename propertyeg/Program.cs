@@ -11,7 +11,7 @@ namespace propertyeg
         static void Main(string[] args)
         {
            
-            int n, flag=0;
+            int choice, flag=0;
 
             List<Employee> list = new List<Employee>();
            
@@ -20,33 +20,33 @@ namespace propertyeg
             {
 
                 Console.WriteLine("\n0.Exit \n 1.Register \n 2.Find \n 3.Display \n 4.Send message");
-                n = Convert.ToInt32(Console.ReadLine());
+                choice = Convert.ToInt32(Console.ReadLine());
 
-                Employee emp = new Employee();
+                Employee employee = new Employee();
 
-                switch (n)
+                switch (choice)
                 {
                     case 0:
                         Environment.Exit(0);
                         break;
 
                     case 1:
-                        emp.register();
-                        list.Add(emp);
+                        employee.Register();
+                        list.Add(employee);
                         Console.WriteLine("Employee Registered\n");
-                        emp.display();
+                        employee.Display();
                         break;
 
                     case 2:
                         Console.WriteLine("Enter the id of the employee to find");
-                        string w = Console.ReadLine();
+                        string id1 = Console.ReadLine();
 
-                        foreach(Employee e in list)
+                        foreach(Employee employee1 in list)
                         {
-                            if (e.Id == w)
+                            if (employee1.Id == id1)
                             {
                                 Console.WriteLine("the employee is:\n");
-                                e.display();
+                                employee1.Display();
                                 flag = 1;
 
                             }
@@ -59,7 +59,7 @@ namespace propertyeg
 
                     case 3:
                         {
-                            emp.display(list);
+                            employee.Display(list);
                         }
                         break;
 
@@ -68,12 +68,12 @@ namespace propertyeg
                             Console.WriteLine("Enter the id of the employee to send message");
                             string y = Console.ReadLine();
 
-                            foreach (Employee e in list)
+                            foreach (Employee employee2 in list)
                             {
-                                if (e.Id == y)
+                                if (employee2.Id == y)
                                 {
                                     Console.WriteLine("\nthe message is send to:\t");
-                                    Console.WriteLine(e.Name);
+                                    Console.WriteLine(employee2.Name);
                                     flag = 1;
 
                                 }
@@ -125,7 +125,7 @@ namespace propertyeg
             set { pin = value; }
         }
 
-        public void register()
+        public void Register()
         {
             Console.WriteLine("\n Id");
             Id = Console.ReadLine();
@@ -140,16 +140,16 @@ namespace propertyeg
 
         }
 
-        public void display(List<Employee>list)
+        public void Display(List<Employee>list)
         {
-            foreach(Employee emp in list)
+            foreach(Employee employee in list)
             {
                 Console.WriteLine("\nThe number of employees in list are :");
                 Console.WriteLine(list.Count);
-                emp.display();
+                employee.Display();
             }
         }
-        public void display()
+        public void Display()
         {
            
             Console.WriteLine("Employee details \n ID : {0} \n Name : {1} \n area {2}\n City :{3} \n Pin :{4} ", Id, Name,Area,City,Pin);
