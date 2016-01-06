@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace final
 {
-    public class Employee :  IEmployee
+    public class Employee :  IEmployee //inheriting interface
     {
         public int flag;
         public string Id, Name, City, Email = "only for HR", Skype = "only for developer", id1;
@@ -78,7 +78,7 @@ namespace final
        
     }
 
-    public class Developer : Employee, IEmployee
+    public class Developer : Employee, IEmployee 
     {
         public Developer()
         {
