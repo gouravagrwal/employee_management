@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace final
 {
-    public interface IEmployee
+    public interface IEmployee //defining interface (use of abstraction)
     {
-    
-        void Display(List<Employee> list);
-        void Find(List<Employee> list);
+        
+        void Display(List<Employee> list); //abstract method
+        void Find(List<Employee> list); //abstract method
 
     }
     class Program
@@ -20,7 +20,7 @@ namespace final
             int choice;
             string id,name,city,email,skype;
            
-            List<Employee> list = new List<Employee>();
+            List<Employee> list = new List<Employee>(); //creating list to store the employees
 
             while(true)
             {
@@ -29,7 +29,7 @@ namespace final
                 Console.WriteLine("enter your choice\n");
                 choice = Convert.ToInt32(Console.ReadLine());
 
-                Employee employee = new Employee();
+                Employee employee = new Employee(); //creating an object of employee class
 
 
                 switch(choice)
