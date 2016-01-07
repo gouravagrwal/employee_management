@@ -9,7 +9,7 @@ namespace final
     public class Employee :  IEmployee //inheriting interface(use of inheritance)
     {
         public int flag;
-        public string Id, Name, City, Email = "only for HR", Skype = "only for developer", idToFind;
+        public string Id, Name, City,idToFind;
         public Employee() //defining default constructor
         {
 
@@ -62,6 +62,7 @@ namespace final
 
     public class Hr : Employee //inheritance
     {
+        string Email;
         public Hr() //default conctructor
         {
 
@@ -80,6 +81,7 @@ namespace final
 
     public class Developer : Employee //inheritance
     {
+        string Skype;
         public Developer() //default constructor
         {
 
