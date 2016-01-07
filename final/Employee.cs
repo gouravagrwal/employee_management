@@ -53,11 +53,19 @@ namespace final
                 Console.WriteLine("not found");
             }
         }
-        // ~Employee()
-        // {
-        //     Console.WriteLine("\n Details are : \n Id: {0} \n Name: {1} \n City: {2} \n Email: {3}", Id, Name, City, Email);
-
-        // }
+        
+        public void Dispose() //Dispose function to clear the memory after use
+        {
+            Id = ""; 
+            Name= "";
+            City = "";
+            Console.WriteLine("Memory Cleared");
+            Console.ReadKey();
+        }
+        ~Employee() //destructor
+         {
+             Dispose();
+         }
     }
 
     public class Hr : Employee //inheritance

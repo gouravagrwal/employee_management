@@ -15,10 +15,11 @@ namespace final
     }
     class Program
     {
+        static string id, name, city, email, skype;
         static void Main(string[] args)
         {
             int choice;
-            string id,name,city,email,skype;
+          //  string id,name,city,email,skype;
            
             List<Employee> list = new List<Employee>(); //creating list to store the employees
 
@@ -30,7 +31,7 @@ namespace final
                 choice = Convert.ToInt32(Console.ReadLine());
 
                 Employee employee = new Employee(); //creating an object of employee class
-
+                Program objProgram = new Program();
 
                 switch(choice)
                 {
@@ -38,23 +39,13 @@ namespace final
                         Environment.Exit(0);
                         break;
                     case 1:
-                        Console.WriteLine("\n Id:");
-                        id = Console.ReadLine();
-                        Console.WriteLine("\n Name:");
-                        name = Console.ReadLine();
-                        Console.WriteLine("\n City :");
-                        city = Console.ReadLine();
+                        objProgram.Register();
                         Console.WriteLine("\n Employee Registered");
                         list.Add(new Employee(id,name,city));
                         Console.ReadKey();
                         break;
                     case 2:
-                        Console.WriteLine("\n Id:");
-                        id = Console.ReadLine();
-                        Console.WriteLine("\n Name:");
-                        name = Console.ReadLine();
-                        Console.WriteLine("\n City :");
-                        city = Console.ReadLine();
+                        objProgram.Register();
                         Console.WriteLine("\n Email :");
                         email = Console.ReadLine();
                         Console.WriteLine("\n Hr Registered");
@@ -63,13 +54,8 @@ namespace final
                         break;
                     
                     case 3:
-
-                        Console.WriteLine("\n Id:");
-                        id = Console.ReadLine();
-                        Console.WriteLine("\n Name:");
-                        name = Console.ReadLine();
-                        Console.WriteLine("\n City :");
-                        city = Console.ReadLine();
+             
+                        objProgram.Register();
                         Console.WriteLine("\n Skype Address :");
                         skype = Console.ReadLine();
                         Console.WriteLine("\n Developer Registered");
@@ -92,7 +78,19 @@ namespace final
             }
             
         }
+
+        public void Register()
+        {
+            Console.WriteLine("\n Id:");
+            id = Console.ReadLine();
+            Console.WriteLine("\n Name:");
+            name = Console.ReadLine();
+            Console.WriteLine("\n City :");
+            city = Console.ReadLine();
+        }
     }
+
+   
         
-    }
+}
 
