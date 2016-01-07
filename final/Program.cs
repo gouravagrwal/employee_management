@@ -10,12 +10,12 @@ namespace final
     {
         
         void Display(List<Employee> list); //abstract method
-        void Find(List<Employee> list); //abstract method
+        void Find(List<Employee> list,string IdToFind); //abstract method
 
     }
     class Program
     {
-        static string id, name, city, email, skype;
+        static string id, name, city, email, skype, idToFind, idToUpdate;
         static void Main(string[] args)
         {
             int choice;
@@ -26,7 +26,7 @@ namespace final
             while(true)
             {
                 Console.Clear();
-                Console.WriteLine("\n 0.Exit \n 1.Register Employee\n 2.Register Hr \n 3.Register Developer \n 4.Find \n 5.Display Whole List");
+                Console.WriteLine("\n 0.Exit \n 1.Register Employee\n 2.Register Hr \n 3.Register Developer \n 4.Find \n 5.Update \n 6.Display Whole List");
                 Console.WriteLine("enter your choice\n");
                 choice = Convert.ToInt32(Console.ReadLine());
 
@@ -64,11 +64,36 @@ namespace final
                         break;
 
                     case 4:
-                        employee.Find(list);
+                        Console.WriteLine("\n Enter the id to find");
+                        idToFind = Console.ReadLine();
+                        employee.Find(list,idToFind);
                         Console.ReadKey();
                         break;
-                
+
                     case 5:
+                        Console.WriteLine("\n Enter the id to update");
+                        idToUpdate = Console.ReadLine();
+                         foreach (Employee employee3 in list)
+                           {
+                              if (employee3.Id == idToUpdate)
+                               {
+                                   Console.WriteLine("\n Id:");
+                                   employee3.Id = Console.ReadLine();
+                                   Console.WriteLine("\n Name:");
+                                   employee3.Name = Console.ReadLine();
+                                   Console.WriteLine("\n City :");
+                                   employee3.City = Console.ReadLine();
+                                   Console.WriteLine("\nIf HR provide the updated email else ignore");
+                                   Console.WriteLine("\n Email :");
+                                   email = Console.ReadLine();
+                                   Console.WriteLine("\nIf Developer provide the updated Skype Address else ignore");
+                                   Console.WriteLine("\n Skype Address :");
+                                   skype = Console.ReadLine();    
+                                }
+                            }                           
+                        break;
+                
+                    case 6:
                         Console.WriteLine("\nThe number of employees in list are :");
                         Console.WriteLine(list.Count);
                         employee.Display(list);

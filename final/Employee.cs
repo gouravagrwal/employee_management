@@ -9,7 +9,7 @@ namespace final
     public class Employee :  IEmployee //inheriting interface(use of inheritance)
     {
         public int flag;
-        public string Id, Name, City,idToFind;
+        public string Id, Name, City, IdToFind;
         public Employee() //defining default constructor
         {
 
@@ -22,7 +22,7 @@ namespace final
         }
 
 
-        public virtual void Display()  //method overiding,method overloading
+        public virtual void Display()  //method overiding
         {
             Console.WriteLine("\n Details are : \n Id: {0} \n Name: {1} \n City: {2} ", Id, Name, City);
         }
@@ -33,18 +33,15 @@ namespace final
                 employee1.Display();
             }
         }
-        public void Find(List<Employee> list)
+        public void Find(List<Employee> list,string IdToFind)
         {
-            Console.WriteLine("\n Enter the id of the employee to find");
-            idToFind = Console.ReadLine();
             foreach (Employee employee2 in list)
             {
-                if (employee2.Id == idToFind)
+                if (employee2.Id == IdToFind)
                 {
                     Console.WriteLine("the employee is:\n");
                     employee2.Display();
                     flag = 1;
-
                 }
 
             }
